@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <title>stupid score</title>
+<style>
+body {
+color: #fff !important;
+background: #000 !important;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  text-align: center !important;
+}
+
+h1 {
+  text-align: center;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+</style>
+<body>
+  <h1>chultrabook stupidity score</h1>
+  <div id="bruh">
+  <form id="checklist">
+    <div>
+      <input type="checkbox" id="item1">
+      <label for="item1">Follows old YT tutorial</label>
+    </div>
+    <div>
+      <input type="checkbox" id="item2">
+      <label for="item2">Windows on RWL</label>
+    </div>
+    <div>
+      <input type="checkbox" id="item3">
+      <label for="item3">Pings people for no reason</label>
+    </div>
+    <div>
+      <input type="checkbox" id="item4">
+      <label for="item4">Any device with Stoney</label>
+    </div>
+    <div>
+      <input type="checkbox" id="item5">
+      <label for="item5">Wants to go to stock on EOL device</label>
+    </div>
+     <div>
+      <input type="checkbox" id="item6">
+      <label for="item6">Tries using Win8.1 or below</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item7">
+      <label for="item7">Tries using 32bit OS</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item8">
+      <label for="item8">Takes install USB out after booting</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item9">
+      <label for="item9">Tries running Windows drivers on Linux</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item10">
+      <label for="item10">Windows on ARM</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item11">
+      <label for="item11">Uses wrong channel</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item12">
+      <label for="item12">Rude to people helping them</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item13">
+      <label for="item13">School/workplace laptop</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item14">
+      <label for="item14">Stolen device</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item15">
+      <label for="item15">Trying to deprovision without org permision</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item16">
+      <label for="item16">Trying to install/installed GalliumOS</label>
+    </div>
+        <div>
+      <input type="checkbox" id="item17">
+      <label for="item17">Using/trying to install Ubuntu</label>
+    </div>
+            <div>
+      <input type="checkbox" id="item18">
+      <label for="item18">Wants to hackintosh Celeron/AMD</label>
+    </div>
+            <div>
+      <input type="checkbox" id="item19">
+      <label for="item19">"where can i find the drivers for {entire_device_name_that_isnt_board_name}"</label>
+    </div>
+                <div>
+      <input type="checkbox" id="item20">
+      <label for="item20">Using Celes</label>
+    </div>
+  </form>
+        <button onclick="getresults()">Get Results</button>
+        </div>
+        <div id="main" style="display: none;">
+  <p>Score: <span id="score">0</span>/100</p>
+  <p id="result"></p></div>
+  <script>
+    function getresults() {
+    document.getElementById("bruh").style.display = "none";
+    document.getElementById("main").style.display = "block";
+}
+    // Get the checklist form
+    const checklist = document.getElementById('checklist');
+
+    // Get the score element
+    const scoreElement = document.getElementById('score');
+
+    // Initialize the score
+    let score = 0;
+
+    // Function to update the score
+    function updateScore() {
+      // Get the number of checked checkboxes
+      const checkedItems = document.querySelectorAll('input[type="checkbox"]:checked');
+      
+      // Update the score
+      score = checkedItems.length * 5;
+
+      // Update the score element
+      scoreElement.textContent = score;
+        if (score < 20) {
+    // Action for score less than 20
+    document.getElementById("result").textContent = "Meh, probably just an annoyance"
+  } else if (score >= 20 && score < 40) {
+document.getElementById("result").textContent = "Definitely annoying some people"
+  } else if (score >= 40 && score < 60) {
+document.getElementById("result").textContent = "Wow. Find somewhere else to lurk."
+  } else if (score >= 60 && score < 80) {
+document.getElementById("result").textContent = "Websites typically don't feel feelings but I feel bad for the people trying to help you."
+  } else {
+document.getElementById("result").textContent = "how are you not banned, also jesus christ"
+  }
+    }
+
+    // Add event listener for checkboxes
+    checklist.addEventListener('change', updateScore);
+
+    // Initialize the score on page load
+    updateScore();
+  </script>
+</body>
+</html>
